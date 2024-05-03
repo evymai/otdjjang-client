@@ -1,23 +1,23 @@
 import { fetchWithResponse, fetchWithoutResponse, fetchWithoutStatus } from "./fetcher"
 
-export const getArticles = async () => {
-  return await fetchWithResponse("articles", {
+export const getBrands = async () => {
+  return await fetchWithResponse("brands", {
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
     },
   })
 }
 
-export const getArticleById = async (id) => {
-  return await fetchWithResponse(`articles/${id}`, {
+export const getBrandById = async (id) => {
+  return await fetchWithResponse(`brands/${id}`, {
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
     },
   })
 }
 
-export const deleteArticle = async (id) => {
-  return await fetchWithoutResponse(`articles/${id}`, {
+export const deleteBrand = async (id) => {
+  return await fetchWithoutResponse(`brands/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
@@ -25,24 +25,24 @@ export const deleteArticle = async (id) => {
   })
 }
 
-export const addArticle = async (article) => {
-  return await fetchWithResponse(`articles`, {
+export const addBrand = async (brand) => {
+  return await fetchWithResponse(`brands`, {
     method: "POST",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(article),
+    body: JSON.stringify(brand),
   })
 }
 
-export const editArticle = async (id, article) => {
-  return await fetchWithoutResponse(`articles/${id}`, {
+export const editBrand = async (id, brand) => {
+  return await fetchWithoutResponse(`Brands/${id}`, {
     method: "PUT",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(article),
+    body: JSON.stringify(brand),
   })
 }
