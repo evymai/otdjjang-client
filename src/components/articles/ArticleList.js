@@ -1,21 +1,54 @@
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { deleteArticle, getArticles } from "../../services/articleService"
+import React, { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import {
+  addUserArticle,
+  deleteArticle,
+  deleteUserArticle,
+  getArticles,
+  getUserArticles,
+} from "../../services/articleService"
 import "./Article.css"
+import SizeModal from "../sizes/SizeModal"
 
-export const ArticleList = ({ currentUser }) => {
+export const ArticleList = () => {
   const [allArticles, setArticles] = useState([])
+  const [userArticles, setUserArticles] = useState([])
+  const [showModal, setShowModal] = useState(false)
+  const [selectedArticleId, setSelectedArticleId] = useState("")
   const navigate = useNavigate()
 
-  const render = () => {
-    getArticles().then((articlesArr) => {
-      console.log(articlesArr)
-      setArticles(articlesArr)
-    })
+  const render = async () => {
+    const articlesArr = await getArticles()
+    setArticles(articlesArr)
+    const userArticlesArr = await getUserArticles()
+    setUserArticles(userArticlesArr)
   }
 
   const handleDelete = async (articleId) => {
     await deleteArticle(articleId)
+    render()
+  }
+
+  const handleRemoveFromWardrobe = async (articleId) => {
+    const matchingUserArticle = userArticles.find((userArticle) => userArticle.article.id === articleId)
+    const userArticleId = matchingUserArticle ? matchingUserArticle.id : null
+    await deleteUserArticle(userArticleId)
+    render()
+  }
+
+  const handleAddToWardrobe = async (currentArticleId) => {
+    const matchingArticle = allArticles.find((article) => article.id === currentArticleId)
+    setSelectedArticleId(currentArticleId)
+    setShowModal(true)
+  }
+
+  const handleAddToWardrobeConfirm = async (articleId, sizeId) => {
+    const newUserArticle = {
+      article_id: articleId,
+      size_id: sizeId,
+    }
+    await addUserArticle(newUserArticle)
+    setShowModal(false)
     render()
   }
 
@@ -27,29 +60,52 @@ export const ArticleList = ({ currentUser }) => {
     <div className="article-view">
       <h2>Clothes</h2>
       <div className="options-container">
-        <button
-          onClick={() => {
-            navigate(`/newClothes`)
-          }}
-        >
-          New Clothes
-        </button>
+        <button onClick={() => navigate(`/newClothes`)}>Add New Clothes</button>
       </div>
       <div className="article-container">
-        {allArticles.map((article) => (
-          <div className="article-card" key={article.id}>
-            <div className="article-img-container">
-              <img src={article.image} alt={`${article.name}`} />
+        {allArticles.map((article) => {
+          const isInWardrobe = userArticles.some((userArticle) => userArticle.article.id === article.id)
+          return (
+            <div className="article-card" key={article.id}>
+              <div className="article-img-container">
+                <img src={article.image} alt={`${article.name}`} />
+              </div>
+              <div>{article.name}</div>
+              <div>{article.brand.name}</div>
+              <div>{article.type.type}</div>
+              <div className="trash-icon">
+                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(article.id)}></i>
+              </div>
+              {isInWardrobe ? (
+                <div className="icon">
+                  <i
+                    className="fa-regular fa-circle-check"
+                    id="hoverState"
+                    onClick={() => handleRemoveFromWardrobe(article.id)}
+                  ></i>
+                  <i className="fa-solid fa-circle-check" onClick={() => handleRemoveFromWardrobe(article.id)}></i>
+                </div>
+              ) : (
+                <div className="icon">
+                  <i className="fa-regular fa-circle-check" onClick={() => handleAddToWardrobe(article.id)}></i>
+                  <i
+                    className="fa-solid fa-circle-check"
+                    id="hoverState"
+                    onClick={() => handleAddToWardrobe(article.id)}
+                  ></i>
+                </div>
+              )}
             </div>
-            <div>{article.name}</div>
-            <div>{article.brand.name}</div>
-            <div>{article.type.type}</div>
-            <div className="trash-icon">
-              <i className="fa-solid fa-trash-can" onClick={() => handleDelete(article.id)}></i>
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
+      {showModal && (
+        <SizeModal
+          articleId={selectedArticleId}
+          onClose={() => setShowModal(false)}
+          onAddToWardrobe={handleAddToWardrobeConfirm}
+        />
+      )}
     </div>
   )
 }
