@@ -1,0 +1,19 @@
+.icon:hover i {
+  display: none;
+}
+
+.icon i#hoverState {
+  display: none;
+}
+
+.icon:hover i#hoverState {
+  display: inline-block; /* Display the opposite icon on hover */
+}
+
+.icon:hover i {
+  display: none;
+}
+
+.trash-icon:hover {
+  color: red;
+}

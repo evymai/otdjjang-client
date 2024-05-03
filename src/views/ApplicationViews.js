@@ -4,6 +4,7 @@ import { NavBar } from "../components/nav/NavBar"
 import { ArticleList } from "../components/articles/ArticleList"
 import Home from "./Home"
 import { NewArticleForm } from "../components/articles/ArticleForm"
+import { UserArticles } from "../components/articles/UserArticle"
 
 export const ApplicationViews = () => {
   return (
@@ -20,6 +21,7 @@ export const ApplicationViews = () => {
         <Route index element={<Home />} />
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/newClothes" element={<NewArticleForm />} />
+        <Route path="/userArticles" element={<UserArticles />} />
       </Route>
     </Routes>
   )
