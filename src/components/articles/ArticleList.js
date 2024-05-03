@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { getArticles } from "../../services/articleService"
+import { deleteArticle, getArticles } from "../../services/articleService"
 
 export const ArticleList = ({ currentUser }) => {
   const [allArticles, setArticles] = useState([])
@@ -11,6 +11,11 @@ export const ArticleList = ({ currentUser }) => {
       console.log(articlesArr)
       setArticles(articlesArr)
     })
+  }
+
+  const handleDelete = async (articleId) => {
+    await deleteArticle(articleId)
+    render()
   }
 
   useEffect(() => {
@@ -38,6 +43,9 @@ export const ArticleList = ({ currentUser }) => {
             <div>{article.name}</div>
             <div>{article.brand.name}</div>
             <div>{article.type.type}</div>
+            <div className="icon">
+              <i className="fa-solid fa-trash" onClick={() => handleDelete(article.id)}></i>
+            </div>
           </div>
         ))}
       </div>
