@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.navbar-item {
+  flex-basis: 25%;
+  list-style-type: none;
+  text-align: center;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.navbar-logout {
+  margin-left: auto;
+}
