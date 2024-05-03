@@ -18,6 +18,9 @@ export const NewArticleForm = () => {
     getTypes().then((typesArr) => setAllTypes(typesArr))
   }, [])
 
+  const handleArticleChange = (event) => {
+    setArticleName(event.target.value)
+  }
   const handleBrandChange = (event) => {
     setArticleBrandId(event.target.value)
   }
