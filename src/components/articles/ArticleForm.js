@@ -4,6 +4,7 @@ import "./ArticleForm.css"
 import { getBrands } from "../../services/brandService"
 import { getTypes } from "../../services/typeService"
 import { addArticle } from "../../services/articleService"
+
 export const NewArticleForm = () => {
   const [allBrands, setAllBrands] = useState([])
   const [allTypes, setAllTypes] = useState([])
