@@ -11,7 +11,11 @@ export const NavBar = () => {
           Clothes
         </Link>
       </li>
-
+      <li className="navbar-item">
+        <Link className="navbar-link" to="/outfits">
+          My Outfits
+        </Link>
+      </li>
       {localStorage.getItem("token") ? (
         <li className="navbar-item navbar-logout">
           <Link

@@ -5,6 +5,8 @@ import { ArticleList } from "../components/articles/ArticleList"
 import Home from "./Home"
 import { NewArticleForm } from "../components/articles/ArticleForm"
 import { UserArticles } from "../components/articles/UserArticle"
+import { OutfitList } from "../components/outfits/OutfitList"
+import { NewOutfitForm } from '../components/outfits/OutfitForm'
 
 export const ApplicationViews = () => {
   return (
@@ -22,6 +24,8 @@ export const ApplicationViews = () => {
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/newClothes" element={<NewArticleForm />} />
         <Route path="/userArticles" element={<UserArticles />} />
+        <Route path="/outfits" element={<OutfitList />} />
+        <Route path="/newOutfit" element={<NewOutfitForm />} />
       </Route>
     </Routes>
   )

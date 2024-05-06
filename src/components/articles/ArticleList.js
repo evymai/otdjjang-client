@@ -11,17 +11,20 @@ import "./Article.css"
 import SizeModal from "../sizes/SizeModal"
 
 export const ArticleList = () => {
-  const [allArticles, setArticles] = useState([])
+  const [allArticles, setAllArticles] = useState([])
   const [userArticles, setUserArticles] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [selectedArticleId, setSelectedArticleId] = useState("")
+
   const navigate = useNavigate()
 
   const render = async () => {
-    const articlesArr = await getArticles()
-    setArticles(articlesArr)
-    const userArticlesArr = await getUserArticles()
-    setUserArticles(userArticlesArr)
+    await getArticles().then((articlesArr) => {
+      setAllArticles(articlesArr)
+    })
+    await getUserArticles().then((userArticlesArr) => {
+      setUserArticles(userArticlesArr)
+    })
   }
 
   const handleDelete = async (articleId) => {
