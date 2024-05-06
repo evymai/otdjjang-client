@@ -1,4 +1,4 @@
-import { fetchWithResponse, fetchWithoutResponse, fetchWithoutStatus } from "./fetcher"
+import { createWithResponse, fetchWithResponse, fetchWithoutResponse, fetchWithoutStatus } from "./fetcher"
 
 export const getArticles = async () => {
   return await fetchWithResponse("articles", {
@@ -26,7 +26,7 @@ export const deleteArticle = async (id) => {
 }
 
 export const addArticle = async (article) => {
-  return await fetchWithResponse(`articles`, {
+  return await createWithResponse(`articles`, {
     method: "POST",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
@@ -73,7 +73,7 @@ export const deleteUserArticle = async (id) => {
 }
 
 export const addUserArticle = async (userArticle) => {
-  return await fetchWithResponse(`userarticles`, {
+  return await createWithResponse(`userarticles`, {
     method: "POST",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,

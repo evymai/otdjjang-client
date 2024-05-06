@@ -1,7 +1,7 @@
 import { createWithResponse, fetchWithResponse, fetchWithoutResponse } from "./fetcher"
 
 export function login(user) {
-  return fetchWithResponse("login", {
+  return createWithResponse("login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

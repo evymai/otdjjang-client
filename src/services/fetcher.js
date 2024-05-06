@@ -44,5 +44,4 @@ export const fetchWithoutResponse = (resource, options) => fetch(`${API_URL}/${r
   .then(checkError)
   .catch(catchError)
 
-export const fetchWithoutStatus = (resource, options) => fetch(`${API_URL}/${resource}`, options)
-  .then((res) => res.json())
+

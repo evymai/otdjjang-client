@@ -1,4 +1,4 @@
-import { fetchWithResponse, fetchWithoutResponse, fetchWithoutStatus } from "./fetcher"
+import { createWithResponse, fetchWithResponse, fetchWithoutResponse, fetchWithoutStatus } from "./fetcher"
 
 export const getBrands = async () => {
   return await fetchWithResponse("brands", {
@@ -26,7 +26,7 @@ export const deleteBrand = async (id) => {
 }
 
 export const addBrand = async (brand) => {
-  return await fetchWithResponse(`brands`, {
+  return await createWithResponse(`brands`, {
     method: "POST",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
