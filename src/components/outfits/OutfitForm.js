@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { getUserArticles } from "../../services/articleService"
 import { addOutfit, addOutfitArticle } from "../../services/outfitService"
 import { getTypes } from "../../services/typeService"
+import "./OutfitForm.css"
 
 export const NewOutfitForm = () => {
   const [userArticles, setUserArticles] = useState([])

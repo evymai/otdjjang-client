@@ -16,14 +16,18 @@ export const Login = () => {
       password,
     }
 
-    login(user).then((res) => {
-      if (res.token) {
-        localStorage.setItem("token", res.token)
-        navigate("/")
-      } else {
-        window.alert("Invalid login")
-      }
-    })
+    login(user)
+      .then((res) => {
+        if (res && res.token) {
+          localStorage.setItem("token", res.token)
+          navigate("/")
+        } else {
+          window.alert("Invalid login")
+        }
+      })
+      .catch((error) => {
+        window.alert("Error during login. Please try again later.")
+      })
   }
 
   return (
