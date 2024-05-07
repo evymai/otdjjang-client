@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import "./Outfit.css"
+import { Link, useNavigate } from "react-router-dom"
 import { addOutfit, deleteOutfit, getOutfits } from "../../services/outfitService"
+import "./Outfit.css"
 
 export const OutfitList = () => {
   const [allOutfits, setAllOutfits] = useState([])
@@ -18,7 +18,7 @@ export const OutfitList = () => {
     await deleteOutfit(outfitId)
     render()
   }
-    
+
   useEffect(() => {
     render()
   }, [])
@@ -36,7 +36,9 @@ export const OutfitList = () => {
               {/* <div className="outfit-img-container">
                 <img src={outfit.image} alt={`${outfit.name}`} />
               </div> */}
-              <div>{outfit.name}</div>
+              <Link to={`/outfits/${outfit.id}`}>
+                <div>{outfit.name}</div>
+              </Link>
               <div className="trash-icon">
                 <i className="fa-solid fa-trash-can" onClick={() => handleDelete(outfit.id)}></i>
               </div>
