@@ -36,13 +36,4 @@ export const addBrand = async (brand) => {
   })
 }
 
-export const editBrand = async (id, brand) => {
-  return await fetchWithoutResponse(`Brands/${id}`, {
-    method: "PUT",
-    headers: {
-      Authorization: `Token ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(brand),
-  })
-}
+

@@ -10,10 +10,15 @@ export const NavBar = () => {
         <Link className="navbar-link" to="/articles">
           Clothes
         </Link>
-          </li>
-          <li className="navbar-item">
+      </li>
+      <li className="navbar-item">
         <Link className="navbar-link" to="/newOutfit">
           New Outfit
+        </Link>
+          </li>
+          <li className="navbar-item">
+        <Link className="navbar-link" to="/brands">
+          Brands
         </Link>
       </li>
       <li className="navbar-item">

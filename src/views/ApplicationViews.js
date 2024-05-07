@@ -8,6 +8,7 @@ import { UserArticles } from "../components/articles/UserArticle"
 import { OutfitList } from "../components/outfits/OutfitList"
 import { NewOutfitForm } from "../components/outfits/OutfitForm"
 import { OutfitDetails } from "../components/outfits/OutfitDetails"
+import { Brands } from '../components/brands/Brand'
 
 export const ApplicationViews = () => {
   return (
@@ -30,6 +31,8 @@ export const ApplicationViews = () => {
           <Route index element={<OutfitList />} />
           <Route path=":outfitId" element={<OutfitDetails />} />
         </Route>
+
+        <Route path="brands" element={<Brands />} />
       </Route>
     </Routes>
   )

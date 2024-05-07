@@ -11,7 +11,6 @@ export const OutfitDetails = () => {
   const render = () => {
     getFullOutfitArticlesById(outfitId).then((outfit) => {
       setOutfit(outfit)
-      console.log(outfit)
     })
     getOutfitById(outfitId).then((outfit) => {
       setOutfitName(outfit.name)
@@ -32,7 +31,10 @@ export const OutfitDetails = () => {
           {outfit.map((outfitArticle) => {
             return (
               <div className="outfit-articles" key={outfitArticle.id}>
-                <img src={outfitArticle.user_article.article.image_url} alt={`${outfitArticle.user_article.article.name}`}  />
+                <img
+                  src={outfitArticle.user_article.article.image_url}
+                  alt={`${outfitArticle.user_article.article.name}`}
+                />
               </div>
             )
           })}
