@@ -10,7 +10,7 @@ import {
 import "./Article.css"
 import SizeModal from "../sizes/SizeModal"
 
-export const ArticleList = () => {
+export const ArticleList = ({ userId }) => {
   const [allArticles, setAllArticles] = useState([])
   const [userArticles, setUserArticles] = useState([])
   const [showModal, setShowModal] = useState(false)
@@ -76,9 +76,6 @@ export const ArticleList = () => {
               <div>{article.name}</div>
               <div>{article.brand.name}</div>
               <div>{article.type.type}</div>
-              <div className="trash-icon">
-                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(article.id)}></i>
-              </div>
               {isInWardrobe ? (
                 <div className="icon">
                   <i
@@ -96,6 +93,16 @@ export const ArticleList = () => {
                     id="hoverState"
                     onClick={() => handleAddToWardrobe(article.id)}
                   ></i>
+                </div>
+              )}
+              {parseInt(article.creator) === parseInt(userId) && (
+                <div className="edit-icon">
+                  <i className="fa-solid fa-pen-to-square" onClick={() => navigate(`/articles/${article.id}`)}></i>
+                </div>
+              )}
+              {parseInt(article.creator) === parseInt(userId) && (
+                <div className="trash-icon">
+                  <i className="fa-solid fa-trash-can" onClick={() => handleDelete(article.id)}></i>
                 </div>
               )}
             </div>

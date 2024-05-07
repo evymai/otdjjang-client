@@ -17,3 +17,7 @@
 .trash-icon:hover {
   color: red;
 }
+
+.edit-icon:hover {
+    color: green;
+  }

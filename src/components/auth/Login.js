@@ -18,14 +18,18 @@ export const Login = () => {
 
     login(user)
       .then((res) => {
-        if (res && res.token) {
+        console.log("Response from login:", res)
+        if (res) {
           localStorage.setItem("token", res.token)
+          localStorage.setItem("userId", res.id) 
           navigate("/")
         } else {
+          console.error("Invalid login response:", res)
           window.alert("Invalid login")
         }
       })
       .catch((error) => {
+        console.error("Error during login:", error)
         window.alert("Error during login. Please try again later.")
       })
   }
