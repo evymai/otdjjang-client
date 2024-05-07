@@ -52,14 +52,14 @@ export const NewOutfitForm = () => {
     }
   }
 
-  const handleCompleteOutfit = async () => {
+  const handleCompleteOutfit = async (event) => {
+    event.preventDefault()
     if (currentOutfit && checkedUserArticles.length > 0) {
       const promises = checkedUserArticles.map((userArticleId) =>
         addOutfitArticle({ outfit_id: currentOutfit.id, user_article_id: userArticleId })
       )
 
       await Promise.all(promises)
-
       navigate(`/outfits/${currentOutfit.id}`)
     }
   }
@@ -103,7 +103,9 @@ export const NewOutfitForm = () => {
                       onChange={(event) => handleCheckboxChange(event)}
                       disabled={!isButtonClicked}
                     />
-                    <label htmlFor={`article-${userArticle.id}`}>{userArticle.article.name}</label>
+                    <label htmlFor={`article-${userArticle.id}`}>
+                      {userArticle.article.brand.name} {userArticle.article.name}
+                    </label>
                   </div>
                 ))}
             </div>

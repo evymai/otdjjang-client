@@ -33,15 +33,15 @@ export const Brands = () => {
       const newBrand = {
         name: brandName,
       }
-      navigate(`/brands`)
-      await addBrand(newBrand)
+      addBrand(newBrand)
+      render()
     } else {
       alert("Please fill in all fields before adding a brand.")
     }
   }
 
   return (
-    <div className="Brand-form-container">
+    <div className="brand-form-container">
       <h2>New Brand</h2>
       <div>
         <form>
@@ -50,7 +50,7 @@ export const Brands = () => {
             <input type="text" placeholder="ex: Gucci" value={brandName} onChange={handleBrandChange} />
           </div>
 
-          <button className="Brand-form-button" onClick={handleAddBrand}>
+          <button className="brand-form-button" onClick={handleAddBrand}>
             Add New Brand
           </button>
         </form>
