@@ -5,7 +5,7 @@ import { getBrands } from "../../services/brandService"
 import { getTypes } from "../../services/typeService"
 import { addArticle } from "../../services/articleService"
 
-export const NewArticleForm = () => {
+export const NewArticleForm = ({ userId }) => {
   const [allBrands, setAllBrands] = useState([])
   const [allTypes, setAllTypes] = useState([])
   const [articleName, setArticleName] = useState("")
@@ -30,7 +30,7 @@ export const NewArticleForm = () => {
   }
 
   const handleAddArticle = async (event) => {
-    event.preventDefault() 
+    event.preventDefault()
 
     if (articleName && articleBrandId && articleTypeId) {
       const newArticle = {
@@ -38,6 +38,7 @@ export const NewArticleForm = () => {
         brand_id: articleBrandId,
         type_id: articleTypeId,
         image_url: null,
+        creator: userId,
       }
       try {
         await addArticle(newArticle)
@@ -88,7 +89,7 @@ export const NewArticleForm = () => {
             })}
           </select>
         </div>
-        <button className="Article-form-button" onClick={handleAddArticle}>
+        <button className="article-form-button" onClick={handleAddArticle}>
           Add New Article
         </button>
       </form>

@@ -8,9 +8,17 @@ import { UserArticles } from "../components/articles/UserArticle"
 import { OutfitList } from "../components/outfits/OutfitList"
 import { NewOutfitForm } from "../components/outfits/OutfitForm"
 import { OutfitDetails } from "../components/outfits/OutfitDetails"
-import { Brands } from '../components/brands/Brand'
+import { Brands } from "../components/brands/Brand"
+import { EditArticleForm } from "../components/articles/EditArticleForm"
 
 export const ApplicationViews = () => {
+  const [userId, setUserId] = useState(null)
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId")
+    setUserId(userId)
+  }, [])
+
   return (
     <Routes>
       <Route
@@ -23,8 +31,11 @@ export const ApplicationViews = () => {
         }
       >
         <Route index element={<Home />} />
-        <Route path="articles" element={<ArticleList />} />
-        <Route path="newClothes" element={<NewArticleForm />} />
+        <Route path="articles">
+          <Route index element={<ArticleList userId={userId} />} />
+          <Route path=":articleId" element={<EditArticleForm userId={userId} />} />
+        </Route>
+        <Route path="newClothes" element={<NewArticleForm userId={userId} />} />
         <Route path="userArticles" element={<UserArticles />} />
         <Route path="newOutfit" element={<NewOutfitForm />} />
         <Route path="outfits">
