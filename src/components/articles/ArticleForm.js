@@ -29,7 +29,9 @@ export const NewArticleForm = () => {
     setArticleTypeId(event.target.value)
   }
 
-  const handleAddArticle = async () => {
+  const handleAddArticle = async (event) => {
+    event.preventDefault() 
+
     if (articleName && articleBrandId && articleTypeId) {
       const newArticle = {
         name: articleName,
@@ -37,8 +39,13 @@ export const NewArticleForm = () => {
         type_id: articleTypeId,
         image_url: null,
       }
-      navigate(`/articles`)
-      await addArticle(newArticle)
+      try {
+        await addArticle(newArticle)
+        navigate(`/articles`)
+      } catch (error) {
+        console.error("Error adding article:", error)
+        alert("An error occurred while adding the article. Please try again later.")
+      }
     } else {
       alert("Please fill in all fields before adding an article.")
     }
