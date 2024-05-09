@@ -41,30 +41,34 @@ export const Brands = () => {
   }
 
   return (
-    <div className="brand-form-container">
-      <h2>New Brand</h2>
-      <div>
-        <form>
-          <div>
-            <label>Name: </label>
-            <input type="text" placeholder="ex: Gucci" value={brandName} onChange={handleBrandChange} />
-          </div>
-
-          <button className="brand-form-button" onClick={handleAddBrand}>
-            Add New Brand
-          </button>
-        </form>
-      </div>
-      <div>
-        <h4>Existing Brands:</h4>
-        {allBrands.map((brand) => {
-          return (
-            <div className="brand" key={brand.id}>
-              {brand.name}
-              <i className="fa-solid fa-trash-can trash-icon" onClick={() => handleDelete(brand.id)}></i>
+    <div className="brand-page-container">
+      <h2 className="brand-page-title">New Brand</h2>
+      <div className="brand-content-container">
+        <div className="brand-form-container">
+          <form className="brand-form">
+            <div>
+              <label>Name: </label>
+              <input type="text" placeholder="ex: Gucci" value={brandName} onChange={handleBrandChange} />
             </div>
-          )
-        })}
+
+            <button className="brand-form-button" onClick={handleAddBrand}>
+              Add New Brand
+            </button>
+          </form>
+        </div>
+        <div className="brand-list-container">
+          <h4>Existing Brands:</h4>
+          <div className="brand-list">
+            {allBrands.map((brand) => {
+              return (
+                <div className="brand" key={brand.id}>
+                  {brand.name}
+                  <i className="fa-solid fa-trash-can trash-icon" onClick={() => handleDelete(brand.id)}></i>
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </div>
   )

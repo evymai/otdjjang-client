@@ -1,3 +1,68 @@
+.article-view {
+  width: 100%;
+  margin: 2% auto auto auto;
+}
+
+.article-view h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-button button {
+  padding: 10px 20px;
+  background-color: #ffe0d3;
+  color: #291309;
+  box-shadow: 1px 2px 5px #65270d;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-button button:hover {
+  background-color: #291309;
+  color: #eeee;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+  border: 1px solid #291309;
+}
+
+.article-card {
+  flex: 1 1 0;
+  padding: 20px;
+  border: 1px solid #d7c5be;
+  background-color: #f9f9f9;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.article-card:hover {
+  transform: scale(1.1);
+}
+
+.article-card img {
+  width: 125px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.article-card .icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .icon:hover i {
   display: none;
 }
@@ -7,17 +72,50 @@
 }
 
 .icon:hover i#hoverState {
-  display: inline-block; /* Display the opposite icon on hover */
+  display: inline-block;
 }
 
-.icon:hover i {
-  display: none;
+.icon {
+  position: absolute;
+  top: 2px;
+  left: 10px;
 }
 
-.trash-icon:hover {
-  color: red;
+.article-card .icon i {
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff926b;
 }
 
-.edit-icon:hover {
-    color: green;
-  }
+.article-card .icon i:hover {
+  color: #4d3e3e;
+}
+
+.article-card .edit-icon {
+  position: absolute;
+  top: 12px;
+  right: 50px;
+}
+
+.article-card .trash-icon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
+
+.article-card .edit-icon i,
+.article-card .trash-icon i {
+  cursor: pointer;
+  font-size: 20px;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.article-card .trash-icon i:hover {
+  color: #ff0000;
+}
+
+.article-card .edit-icon i:hover {
+  color: green;
+}

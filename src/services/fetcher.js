@@ -32,6 +32,12 @@ const catchError = (err) => {
   }
 }
 
+const catchErrorIgnore = (err) => {
+  if (err.message === '404') {
+    return null;
+  }
+}
+
 export const fetchWithResponse = (resource, options) => fetch(`${API_URL}/${resource}`, options)
   .then(checkErrorJson)
   .catch(catchError)
@@ -44,4 +50,6 @@ export const fetchWithoutResponse = (resource, options) => fetch(`${API_URL}/${r
   .then(checkError)
   .catch(catchError)
 
-
+export const fetchWithResIgnoreError = (resource, options) => fetch(`${API_URL}/${resource}`, options)
+.then(checkErrorJson)
+.catch(catchErrorIgnore)

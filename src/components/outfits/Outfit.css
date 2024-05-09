@@ -1,0 +1,75 @@
+.outfit-view {
+  width: 100%;
+  max-width: 800px;width: 100%;
+  margin: 2% auto auto auto;
+}
+
+.outfit-view h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-button button {
+  padding: 10px 20px;
+  background-color: #ffe0d3;
+  color: #291309;
+  box-shadow: 1px 2px 5px #65270D;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-button button:hover {
+  background-color: #291309;
+  color: #eeee;
+}
+
+.outfit-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+.outfit-card {
+  padding: 20px;
+  border: 1px solid #d7c5be;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.outfit-card:hover{
+
+    box-shadow: 1px 2px 5px #4d3e3e;
+}
+
+.outfit-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.outfit-container .trash-icon {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.outfit-container .trash-icon i {
+  color: #999;
+}
+
+.outfit-container .trash-icon i:hover {
+  color: #ff0000;
+}
+
+.outfit_articles img {
+    width: 125px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }

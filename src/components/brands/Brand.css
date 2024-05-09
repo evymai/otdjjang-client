@@ -1,0 +1,94 @@
+.brand-page-container {
+  width: 100%;
+  margin: 2% auto auto auto;
+}
+
+.brand-page-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brand-content-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.brand-form-container {
+  flex-grow: 1;
+}
+
+.brand-form {
+  margin: 0 3rem 2rem 3rem;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-list-container {
+  flex-grow: 2;
+  background-color: #ffe0d3;
+  padding: 20px;
+  text-align: center;
+  margin: 0rem 2rem;
+}
+
+.brand-list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.brand {
+  padding: 0px 10px;
+}
+
+.brand-form-container label {
+  font-size: 14px;
+}
+
+.brand-form-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.brand-form-container .brand-form-button {
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+  background-color: #291309;
+  color: #eeee;
+  border: none;
+  width: 140px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.brand-form-container .brand-form-button:hover {
+  background-color: #ff926b;
+  color: #eeee;
+}
+
+.brand-list .brand {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-list .brand .trash-icon {
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.brand-list .brand .trash-icon:hover {
+  color: #ff0000;
+}

@@ -10,6 +10,7 @@ import { NewOutfitForm } from "../components/outfits/OutfitForm"
 import { OutfitDetails } from "../components/outfits/OutfitDetails"
 import { Brands } from "../components/brands/Brand"
 import { EditArticleForm } from "../components/articles/EditArticleForm"
+import { Fitcheck } from "../components/fitchecks/Fitcheck"
 
 export const ApplicationViews = () => {
   const [userId, setUserId] = useState(null)
@@ -42,8 +43,8 @@ export const ApplicationViews = () => {
           <Route index element={<OutfitList />} />
           <Route path=":outfitId" element={<OutfitDetails />} />
         </Route>
-
         <Route path="brands" element={<Brands />} />
+        <Route path="fitcheck" element={<Fitcheck />} />
       </Route>
     </Routes>
   )

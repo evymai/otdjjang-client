@@ -1,0 +1,51 @@
+.article-form-container {
+  width: 80%;
+  margin: 2% auto auto auto;
+  padding: 10px;
+  border: 1px solid #4d3e3e;
+}
+
+.article-form-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.article-form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.article-form-container label {
+    font-size: 14px;
+  }
+
+.article-form-container input,
+.article-form-container select {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+
+.article-form-container .dropdown {
+  width: 80%;
+  padding-right: 20px;
+}
+
+.article-form-container .article-form-button {
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+  background-color: #291309;
+  color: #eeee;
+  border: none;
+  width: 140px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.article-form-container .article-form-button:hover {
+  background-color: #FF926B;
+  color: #eeee;
+}

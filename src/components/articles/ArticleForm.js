@@ -11,6 +11,7 @@ export const NewArticleForm = ({ userId }) => {
   const [articleName, setArticleName] = useState("")
   const [articleBrandId, setArticleBrandId] = useState("")
   const [articleTypeId, setArticleTypeId] = useState("")
+  const [imageFile, setImageFile] = useState(null)
 
   const navigate = useNavigate()
 
@@ -28,20 +29,23 @@ export const NewArticleForm = ({ userId }) => {
   const handleTypeChange = (event) => {
     setArticleTypeId(event.target.value)
   }
+  const handleImageChange = (event) => {
+    setImageFile(event.target.files[0])
+  }
 
   const handleAddArticle = async (event) => {
     event.preventDefault()
 
-    if (articleName && articleBrandId && articleTypeId) {
-      const newArticle = {
-        name: articleName,
-        brand_id: articleBrandId,
-        type_id: articleTypeId,
-        image_url: null,
-        creator: userId,
-      }
+    if (articleName && articleBrandId && articleTypeId && imageFile) {
+      const formData = new FormData()
+      formData.append("name", articleName)
+      formData.append("brand_id", articleBrandId)
+      formData.append("type_id", articleTypeId)
+      formData.append("image", imageFile)
+      formData.append("creator", userId)
+
       try {
-        await addArticle(newArticle)
+        await addArticle(formData)
         navigate(`/articles`)
       } catch (error) {
         console.error("Error adding article:", error)
@@ -54,12 +58,16 @@ export const NewArticleForm = ({ userId }) => {
 
   return (
     <div className="article-form-container">
-      <h2>New Article</h2>
+      <h2>New Clothes</h2>
 
       <form>
         <div>
           <label>Name: </label>
           <input type="text" placeholder="ex: Floral Print Dress" value={articleName} onChange={handleArticleChange} />
+        </div>
+        <div>
+          <label>Image: </label>
+          <input type="file" onChange={handleImageChange} />
         </div>
         <div className="dropdown-container">
           <select id="brand-dropdown" className="dropdown" onChange={handleBrandChange}>
@@ -90,7 +98,7 @@ export const NewArticleForm = ({ userId }) => {
           </select>
         </div>
         <button className="article-form-button" onClick={handleAddArticle}>
-          Add New Article
+          Add New Clothes
         </button>
       </form>
     </div>
