@@ -1,0 +1,138 @@
+.outfit-form-container {
+  width: 80%;
+  margin: 2% auto auto auto;
+  padding: 20px;
+  border: 1px solid #4d3e3e;
+}
+
+.outfit-form-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.outfit-form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.outfit-form-container label {
+  font-size: 14px;
+}
+
+.outfit-form-container input[type="text"] {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 90%;
+}
+
+.outfit-form-container .articles-container {
+  padding: 10px 25px 10px 10px;
+}
+
+.outfit-form-button {
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+  background-color: #291309;
+  color: #eeee;
+  border: none;
+  width: 140px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.outfit-form-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.outfit-form-button:disabled:hover {
+  background-color: #ccc;
+}
+
+.outfit-form-button:hover {
+  background-color: #FF926B;
+  color: #eee;
+}
+
+.article-form-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.article-form-button:disabled:hover {
+  background-color: #ccc;
+}
+
+.article-form-button {
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+  background-color: #291309;
+  color: #eeee;
+  border: none;
+  width: 140px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.article-form-button:hover {
+  background-color: #FF926B;
+  color: #eeee;
+}
+
+.outfit-form-container input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.outfit-form-container label.checkbox-label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.outfit-form-container input[type="checkbox"]:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.type-header {
+  background-color: #ffdaca;
+  border: 1px solid #291309;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.type-header h4 {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.type-header i {
+  font-size: 14px;
+}
+
+.type-content {
+  display: none;
+  border: 1px solid #eee;
+}
+
+.type-content.active {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 15px 5px 15px;
+}
+
+.type-item {
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 5px;
+  cursor: pointer;
+}

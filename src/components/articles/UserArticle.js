@@ -28,9 +28,9 @@ export const UserArticles = () => {
       <div className="article-container">
         {userArticles.map((userArticle) => {
           return (
-            <div className="Article-card" key={userArticle.id}>
+            <div className="article-card" key={userArticle.id}>
               <img
-                src={userArticle.article.image_url}
+                src={userArticle.article.image}
                 alt={`${userArticle.article.name}`}
                 key={userArticle.article.id}
               />
@@ -40,9 +40,9 @@ export const UserArticles = () => {
               <div>{userArticle.size?.size}</div>
 
               <div className="owned-icons icon">
-                <i className="fa-regular fa-circle-xmark" onClick={() => handleRemoveFromWardrobe(userArticle.id)}></i>
+                <i className="fa-solid fa-star" onClick={() => handleRemoveFromWardrobe(userArticle.id)}></i>
                 <i
-                  className="fa-solid fa-circle-xmark"
+                  className="fa-regular fa-star"
                   id="hoverState"
                   onClick={() => handleRemoveFromWardrobe(userArticle.id)}
                 ></i>

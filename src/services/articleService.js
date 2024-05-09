@@ -25,14 +25,13 @@ export const deleteArticle = async (id) => {
   })
 }
 
-export const addArticle = async (article) => {
+export const addArticle = async (formData) => {
   return await createWithResponse(`articles`, {
     method: "POST",
     headers: {
       Authorization: `Token ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
     },
-    body: JSON.stringify(article),
+    body: formData,
   })
 }
 

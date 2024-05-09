@@ -64,8 +64,13 @@ export const NewOutfitForm = () => {
     }
   }
 
+  const handleTypeHeaderClick = (event) => {
+    const typeContent = event.currentTarget.nextElementSibling
+    typeContent.classList.toggle("active")
+  }
+
   return (
-    <div>
+    <div className="outfit-form-container">
       <h2>New Outfit</h2>
       <form>
         <div>
@@ -89,29 +94,34 @@ export const NewOutfitForm = () => {
       <form>
         <div className="articles-container">
           {types.map((type) => (
-            <div key={type.id}>
-              <h3>{type.name}</h3>
-              {userArticles
-                .filter((userArticle) => userArticle.article.type.id === type.id)
-                .map((userArticle) => (
-                  <div key={userArticle.id}>
-                    <input
-                      type="checkbox"
-                      id={`article-${userArticle.id}`}
-                      value={userArticle.id}
-                      checked={checkedUserArticles.includes(userArticle.id)}
-                      onChange={(event) => handleCheckboxChange(event)}
-                      disabled={!isButtonClicked}
-                    />
-                    <label htmlFor={`article-${userArticle.id}`}>
-                      {userArticle.article.brand.name} {userArticle.article.name}
-                    </label>
-                  </div>
-                ))}
+            <div key={type.id} className="type-container">
+              <div className="type-header" onClick={handleTypeHeaderClick}>
+                <h4>
+                  {type.name} <i className="fas fa-chevron-down"></i>
+                </h4>
+              </div>
+              <div className="type-content">
+                {userArticles
+                  .filter((userArticle) => userArticle.article.type.id === type.id)
+                  .map((userArticle, index) => (
+                    <div key={userArticle.id} className="type-item">
+                      <input
+                        type="checkbox"
+                        id={`article-${userArticle.id}`}
+                        value={userArticle.id}
+                        checked={checkedUserArticles.includes(userArticle.id)}
+                        onChange={(event) => handleCheckboxChange(event)}
+                        disabled={!isButtonClicked}
+                      />
+                      <label htmlFor={`article-${userArticle.id}`}>
+                        {userArticle.article.brand.name} {userArticle.article.name}
+                      </label>
+                    </div>
+                  ))}
+              </div>
             </div>
           ))}
         </div>
-
         <button
           className="article-form-button"
           onClick={handleCompleteOutfit}

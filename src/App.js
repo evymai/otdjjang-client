@@ -5,7 +5,11 @@ import { ApplicationViews } from "./views/ApplicationViews"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 
+
+
 function App() {
+  
+  
   return (
     <BrowserRouter>
       <Routes>

@@ -26,7 +26,7 @@ export const OutfitList = () => {
   return (
     <div className="outfit-view">
       <h2>Clothes</h2>
-      <div className="options-container">
+      <div className="new-button">
         <button onClick={() => navigate(`/newOutfit`)}>Add New Outfit</button>
       </div>
       <div className="outfit-container">

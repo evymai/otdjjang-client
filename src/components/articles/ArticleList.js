@@ -62,7 +62,7 @@ export const ArticleList = ({ userId }) => {
   return (
     <div className="article-view">
       <h2>Clothes</h2>
-      <div className="options-container">
+      <div className="new-button">
         <button onClick={() => navigate(`/newClothes`)}>Add New Clothes</button>
       </div>
       <div className="article-container">
@@ -71,7 +71,7 @@ export const ArticleList = ({ userId }) => {
           return (
             <div className="article-card" key={article.id}>
               <div className="article-img-container">
-                <img src={article.image} alt={`${article.name}`} />
+                <img src={article.image} alt={article.name} />
               </div>
               <div>{article.name}</div>
               <div>{article.brand.name}</div>
@@ -79,20 +79,16 @@ export const ArticleList = ({ userId }) => {
               {isInWardrobe ? (
                 <div className="icon">
                   <i
-                    className="fa-regular fa-circle-check"
+                    className="fa-regular fa-star"
                     id="hoverState"
                     onClick={() => handleRemoveFromWardrobe(article.id)}
                   ></i>
-                  <i className="fa-solid fa-circle-check" onClick={() => handleRemoveFromWardrobe(article.id)}></i>
+                  <i className="fa-solid fa-star" onClick={() => handleRemoveFromWardrobe(article.id)}></i>
                 </div>
               ) : (
                 <div className="icon">
-                  <i className="fa-regular fa-circle-check" onClick={() => handleAddToWardrobe(article.id)}></i>
-                  <i
-                    className="fa-solid fa-circle-check"
-                    id="hoverState"
-                    onClick={() => handleAddToWardrobe(article.id)}
-                  ></i>
+                  <i className="fa-regular fa-star" onClick={() => handleAddToWardrobe(article.id)}></i>
+                  <i className="fa-solid fa-star" id="hoverState" onClick={() => handleAddToWardrobe(article.id)}></i>
                 </div>
               )}
               {parseInt(article.creator) === parseInt(userId) && (
