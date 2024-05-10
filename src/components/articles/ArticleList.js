@@ -70,12 +70,12 @@ export const ArticleList = ({ userId }) => {
           const isInWardrobe = userArticles.some((userArticle) => userArticle.article.id === article.id)
           return (
             <div className="article-card" key={article.id}>
+              <div className='article-card-text'>{article.name}</div>
+              <div>{article.brand.name}</div>
+              <div>{article.type.type}</div>
               <div className="article-img-container">
                 <img src={article.image} alt={article.name} />
               </div>
-              <div>{article.name}</div>
-              <div>{article.brand.name}</div>
-              <div>{article.type.type}</div>
               {isInWardrobe ? (
                 <div className="icon">
                   <i

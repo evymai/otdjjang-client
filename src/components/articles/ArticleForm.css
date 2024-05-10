@@ -2,12 +2,10 @@
   width: 80%;
   margin: 2% auto auto auto;
   padding: 10px;
-  border: 1px solid #4d3e3e;
 }
 
 .article-form-container h2 {
   margin-top: 0;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -18,8 +16,8 @@
 }
 
 .article-form-container label {
-    font-size: 14px;
-  }
+  font-size: 14px;
+}
 
 .article-form-container input,
 .article-form-container select {
@@ -30,14 +28,13 @@
 }
 
 .article-form-container .dropdown {
-  width: 80%;
-  padding-right: 20px;
+  width: 70%;
 }
 
 .article-form-container .article-form-button {
   margin: 10px 0px 20px 0px;
   padding: 10px;
-  background-color: #291309;
+  background-color: #4d4d4d;
   color: #eeee;
   border: none;
   width: 140px;
@@ -46,6 +43,6 @@
 }
 
 .article-form-container .article-form-button:hover {
-  background-color: #FF926B;
-  color: #eeee;
+  background-color: #fff4e0;
+  color: #4d4d4d;
 }

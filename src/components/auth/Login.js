@@ -53,7 +53,7 @@ export const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <div className="login-btn">
+        <div className="login-button">
           <button type="submit">Login</button>
         </div>
         <section>

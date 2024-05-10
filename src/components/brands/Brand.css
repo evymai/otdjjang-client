@@ -5,7 +5,7 @@
 
 .brand-page-title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .brand-content-container {
@@ -32,7 +32,7 @@
 
 .brand-list-container {
   flex-grow: 2;
-  background-color: #ffe0d3;
+  background-color: #FFF4E0;
   padding: 20px;
   text-align: center;
   margin: 0rem 2rem;
@@ -63,7 +63,7 @@
 .brand-form-container .brand-form-button {
   margin: 10px 0px 20px 0px;
   padding: 10px;
-  background-color: #291309;
+  background-color: #4D4D4D;
   color: #eeee;
   border: none;
   width: 140px;
@@ -72,8 +72,8 @@
 }
 
 .brand-form-container .brand-form-button:hover {
-  background-color: #ff926b;
-  color: #eeee;
+  background-color: #FFF4E0;
+  color: #4D4D4D;
 }
 
 .brand-list .brand {

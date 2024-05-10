@@ -1,5 +1,5 @@
-/* Modal Container */
-.modal {
+/* size-modal Container */
+.size-modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,8 +12,8 @@
   z-index: 999; /* Ensure it appears on top of other content */
 }
 
-/* Modal Content */
-.modal-content {
+/* size-modal Content */
+.size-modal-content {
   background-color: white;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
@@ -28,8 +28,8 @@
   color: #555;
 }
 
-/* Center the modal content vertically */
-.modal-content {
+/* Center the size-modal content vertically */
+.size-modal-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,4 +38,60 @@
 
 .close:hover {
   color: red;
+}/* size-modal Container */
+.size-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* size-modal Content */
+.size-modal-content {
+  background-color: white;
+  padding: 20px 50px 40px 50px;
+  box-shadow: 0 0 10px #8e4d4dee;
+  max-width: 80%;
+}
+
+/* Close Button */
+.close {
+  align-self: self-end;
+  cursor: pointer;
+  font-size: 24px;
+  color: #bbb;
+}
+
+/* Center the size-modal content vertically */
+.size-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close:hover {
+  color: red;
+}
+
+.size-modal button {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #B46060;
+  color: #eeee;
+  border: none;
+  width: 120px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.size-modal button:hover {
+  background-color: #fff4e0;
+  color: #B46060;
 }

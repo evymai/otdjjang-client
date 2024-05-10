@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Fitcheck.css"
 import { getOutfitPhotos } from "../../services/outfitPhotoService"
+import moment from 'moment'
 
 export const Fitcheck = () => {
   const [allOutfitPhotos, setAllOutfitPhotos] = useState([])
@@ -25,9 +26,10 @@ export const Fitcheck = () => {
         {allOutfitPhotos.map((fitcheck) => {
           return (
             <div className="fitcheck-card" key={fitcheck.id}>
-              <div className="fitcheck-img-container">
+              <div>
                 <img src={fitcheck.image} alt={Fitcheck} />
               </div>
+              <div>{moment(fitcheck.worn_on).format("MMM D, YYYY")}</div>
             </div>
           )
         })}

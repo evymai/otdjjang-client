@@ -39,17 +39,16 @@
 
 .fitcheck-img-container button {
   padding: 10px 20px;
-  background-color: #ffe0d3;
-  color: #291309;
-  box-shadow: 1px 2px 5px #65270d;
+  background-color: #4d4d4d;
+  color: #eee;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .fitcheck-img-container button:hover {
-  background-color: #291309;
-  color: #eeee;
+  background-color: #B46060;
+  color: #FFF4E0;
 }
 
 .outfit-articles-container {

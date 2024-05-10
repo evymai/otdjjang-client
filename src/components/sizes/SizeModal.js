@@ -26,8 +26,8 @@ const SizeModal = ({ articleId, onClose, onAddToWardrobe }) => {
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content">
+    <div className="size-modal">
+      <div className="size-modal-content">
         <i className="fa-solid fa-xmark close" onClick={onClose}></i>
 
         <h2>Select Size</h2>

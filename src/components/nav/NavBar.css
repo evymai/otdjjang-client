@@ -1,14 +1,15 @@
 .navbar {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: 0;
   width: 100%;
   padding: 0.75rem 0 0.75rem 0;
-  background-color: #4D3E3E;
+  background-color: #4d3e3e;
+  justify-content: space-evenly;
 }
 
 .navbar-item {
-  flex-basis: 25%;
+  padding: 5px;
   list-style-type: none;
   text-align: center;
 }
@@ -19,13 +20,9 @@
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #FFC38B;
+  color: #fff3cd;
 }
 
 .navbar-link:hover {
-  color: #FFF3CD;
-}
-
-.navbar-logout {
-  margin-left: auto;
+  color: #ffbf8b;
 }

@@ -37,7 +37,7 @@ export const NavBar = () => {
         </Link>
       </li>
       {localStorage.getItem("token") ? (
-        <li className="navbar-item navbar-logout">
+        <li className="navbar-item">
           <Link
             className="navbar-link"
             to=""

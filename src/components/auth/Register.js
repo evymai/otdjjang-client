@@ -29,60 +29,48 @@ export const Register = () => {
   }
 
   return (
-    <main style={{ textAlign: "center" }}>
+    <div className="login-container">
       <form className="form-register" onSubmit={handleRegister}>
         <h1>Otdjjang</h1>
         <h2>Register an account</h2>
-        <fieldset>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-              autoFocus
-            />
+
+        <input
+          type="text"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          required
+          autoFocus
+        />
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        <div className="form-group">
+          <div className="register-button">
+            <button type="submit">Register</button>
           </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <button className="register-btn" type="submit">
-              Register
-            </button>
-          </div>
-        </fieldset>
+        </div>
+
         <section>
           Already have an account? <Link to="/login">Login here!</Link>
         </section>
       </form>
-    </main>
+    </div>
   )
 }

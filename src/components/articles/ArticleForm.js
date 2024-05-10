@@ -62,12 +62,13 @@ export const NewArticleForm = ({ userId }) => {
 
       <form>
         <div>
-          <label>Name: </label>
+          <label>Name: </label> <br></br>
           <input type="text" placeholder="ex: Floral Print Dress" value={articleName} onChange={handleArticleChange} />
         </div>
         <div>
           <label>Image: </label>
-          <input type="file" onChange={handleImageChange} />
+          <br></br>
+          <input type="file" id="fileInput" onChange={handleImageChange} />
         </div>
         <div className="dropdown-container">
           <select id="brand-dropdown" className="dropdown" onChange={handleBrandChange}>

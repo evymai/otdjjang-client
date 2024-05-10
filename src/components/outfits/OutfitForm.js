@@ -74,7 +74,7 @@ export const NewOutfitForm = () => {
       <h2>New Outfit</h2>
       <form>
         <div>
-          <label>Name: </label>
+          <label>Name: </label> <br></br>
           <input
             type="text"
             placeholder="ex: Casual Summer Fit"

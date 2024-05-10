@@ -22,7 +22,7 @@ const UploadModal = ({ onClose, onUpload }) => {
       <div className="modal-content">
         <i className="fa-solid fa-xmark close" onClick={onClose}></i>
         <h2>Upload Fitcheck Image</h2>
-        <input type="file" onChange={handleFileChange} />
+        <input type="file" id="fileInput" onChange={handleFileChange} />
         <button onClick={handleSubmit}>Upload</button>
       </div>
     </div>

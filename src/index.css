@@ -12,4 +12,17 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+.home-container {
+  margin: 0;
+  background-image: url("/otdjjang-home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 
+.home {
+  padding-top: 60px;
+  text-align: center;
+  margin: 0;
+  color: #4d3e3e;
+}
