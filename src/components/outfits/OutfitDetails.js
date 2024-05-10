@@ -61,11 +61,11 @@ export const OutfitDetails = () => {
           {outfit.map((outfitArticle) => {
             return (
               <div className="outfit-articles" key={outfitArticle.id}>
+                <div>{outfitArticle.user_article.article.name}</div>
                 <img
                   src={`http://localhost:8000/${outfitArticle.user_article.article.image}`}
                   alt={outfitArticle.user_article.article.name}
                 />
-                <div>{outfitArticle.user_article.article.name}</div>
               </div>
             )
           })}

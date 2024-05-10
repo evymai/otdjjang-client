@@ -85,9 +85,9 @@
 }
 
 .outfit-form-container input[type="checkbox"] {
-  margin-right: 10px;
   cursor: pointer;
   transform: scale(1.05);
+  vertical-align: middle;
 }
 
 .outfit-form-container label.checkbox-label {
@@ -129,11 +129,11 @@
 }
 
 .type-item {
-  width: 25%;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.checkbox-item input[type="checkbox"] {
-  margin-right: 5px;
-  cursor: pointer;
+.type-item input[type="checkbox"] {
+  margin-right: 2px;
 }

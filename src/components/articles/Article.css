@@ -40,7 +40,7 @@
   flex: 1 1 0;
   min-width: 150px;
   padding: 20px;
-  box-shadow: 1px 2px 5px #b46060;
+  box-shadow: 1px 1px 4px #b46060;
   position: relative;
   transition: box-shadow 0.3s ease;
   text-align: center;

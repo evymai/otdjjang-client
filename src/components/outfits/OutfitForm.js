@@ -65,9 +65,12 @@ export const NewOutfitForm = () => {
   }
 
   const handleTypeHeaderClick = (event) => {
-    const typeContent = event.currentTarget.nextElementSibling
-    typeContent.classList.toggle("active")
+    const typeHeader = event.currentTarget;
+    const typeContainer = typeHeader.closest('.type-container');
+    const typeContent = typeContainer.querySelector('.type-content');
+    typeContent.classList.toggle('active');
   }
+  
 
   return (
     <div className="outfit-form-container">
